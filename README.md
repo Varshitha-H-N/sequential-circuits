@@ -92,7 +92,7 @@ endmodule
 
 ## 📷 Waveform Output
 
-![Waveform](waveform.png)
+![Waveform](Screenshot 2026-03-25 124939.pn)
 
 ## 🛠 Tools Used
 - Cadence Xcelium (xrun)
