@@ -92,7 +92,7 @@ endmodule
 
 ## 📷 Waveform Output
 
-![Waveform](Screenshot 2026-03-25 124939.pn)
+![Waveform](https://github.com/Varshitha-H-N/sequential-circuits/blob/main/Screenshot%202026-03-25%20124939.png)
 
 ## 🛠 Tools Used
 - Cadence Xcelium (xrun)
