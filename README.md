@@ -28,28 +28,28 @@ always #5 clk = ~clk;
 module sr_ff (
     input S,
     input R,
-    input clk,
-    output reg Q,
-    output reg Q_bar
+    input Clk,
+    output reg Q0,
+    output reg Q1
 );
 
 always @(posedge clk) begin
     case ({S,R})
         2'b00: begin
-            Q <= Q;           // Hold
-            Q_bar <= Q_bar;
+            Q0 <= Q0;           // Hold
+            Q1 <= Q1;
         end
         2'b01: begin
-            Q <= 0;           // Reset
-            Q_bar <= 1;
+            Q0 <= 0;           // Reset
+            Q1 <= 1;
         end
         2'b10: begin
-            Q <= 1;           // Set
-            Q_bar <= 0;
+            Q0 <= 1;           // Set
+            Q1 <= 0;
         end
         2'b11: begin
-            Q <= 1'bx;        // Invalid
-            Q_bar <= 1'bx;
+            Q0 <= 1'bx;        // Invalid
+            Q1 <= 1'bx;
         end
     endcase
 end
@@ -62,14 +62,14 @@ endmodule
 module sr_ff_tb;
 
 reg S, R, clk;
-wire Q, Q_bar;
+wire Q0, Q1;
 
 sr_ff uut (
     .S(S),
     .R(R),
     .clk(clk),
-    .Q(Q),
-    .Q_bar(Q_bar)
+    .Q0(Q0),
+    .Q1(Q1)
 );
 
 // Clock generation
@@ -101,7 +101,8 @@ endmodule
 ## 📂 Files Included
 - `sr_ff.v` → Design file
 - `sr_ff_tb.v` → Testbench
-- `waveform.png` → Simulation output
+- `https://github.com/Varshitha-H-N/sequential-circuits/blob/main/Screenshot%202026-03-25%20124939.png
+` → Simulation output
 
 ## 🚀 Key Learning
 - Synchronous sequential logic
